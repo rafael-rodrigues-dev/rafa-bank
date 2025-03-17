@@ -18,7 +18,7 @@ app.use(express.json());
 app.use('/api', transactionRoutes);
 
 // Rota de teste
-app.get('/', (req: Request, res: Response) => {
+app.get('/', (_req: Request, res: Response) => {
   res.send('API do Rafa Bank funcionando!');
 });
 

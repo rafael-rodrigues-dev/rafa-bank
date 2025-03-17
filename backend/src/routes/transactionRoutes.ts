@@ -5,7 +5,7 @@ const router = express.Router();
 const prisma = new PrismaClient();
 
 // Rota para obter o dashboard (saldo total e transações recentes)
-router.get('/dashboard', async (req: Request, res: Response) => {
+router.get('/dashboard', async (_req: Request, res: Response) => {
   try {
     const transactions = await prisma.transaction.findMany();
     
@@ -32,7 +32,7 @@ router.get('/dashboard', async (req: Request, res: Response) => {
 });
 
 // Rota para obter todas as transações
-router.get('/transactions', async (req: Request, res: Response) => {
+router.get('/transactions', async (_req: Request, res: Response) => {
   try {
     const transactions = await prisma.transaction.findMany({
       orderBy: {
